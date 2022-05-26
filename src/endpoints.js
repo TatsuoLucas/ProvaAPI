@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import {  Dobro, Somar, Tabuada, Temperatura,  Media, Primaria, Cinema, Caracteres, MaiorNumero} from './services.js'
+import {  Dobro, Somar, Tabuada, Temperatura,  Media, Primaria, Ingresso, Caracteres, MaiorNumero} from './services.js'
 
 const server = Router();
 
@@ -100,15 +100,15 @@ server.get('/primaria/:cor' , (req, resp) => {
     }
 })
 
-server.post('/cinema' , (req, resp) => {
+server.post('/ingresso' , (req, resp) => {
     try{
 
         const {a,b,c} = req.body
 
-        const y = Cinema(a,b,c)
+        const y = Ingresso(a,b,c)
 
     resp.send({
-        cinema: y
+    ingresso: y
     })
 }
     catch(err) {
@@ -140,7 +140,7 @@ server.get('/dia2/caracteres/:texto/:caracter', (req, resp) => {
 
 server.post('/dia2/maiornumero', (req, resp) => {
     try{
-    const a = req.body.array;
+    const a = req.body;
 
     const x = MaiorNumero(a);
 

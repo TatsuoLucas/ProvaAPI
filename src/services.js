@@ -36,7 +36,7 @@ export function Primaria(cor){
     }
 
 }
-export function Cinema (filme, dia, pessoas){
+export function Ingresso (filme, dia, pessoas){
     let i = 0;
     if (filme == 'nacional' && dia == 'quarta'){
         i = 2.50;
